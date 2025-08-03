@@ -1,0 +1,36 @@
+.button{
+    padding: 16px 40px;
+}
+
+.button2{
+   padding: 16px 40px;
+   border-top: 0.5px solid rgb(245, 185, 185, 0.15) ;
+   border-left: 0.3px solid rgb(245, 185, 185, 0.15);
+   background-color: rgb(255, 255, 255, 0.3);
+}
+
+.button{
+  transition: transform 150ms ease-in-out;
+}
+
+.button:hover {
+  transform: scale(0.95);
+}
+
+.button2{
+  transition: transform 150ms ease-in-out;
+}
+
+.button2:hover {
+  transform: scale(0.95);
+}
+
+
+
+@media (max-width: 380px) {
+    .button{
+    padding: 16px 25px;
+}
+    .button2{
+        padding: 16px 25px;
+}}

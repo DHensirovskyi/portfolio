@@ -1,0 +1,9 @@
+.languageBtn{
+    display: block;
+}
+
+@media (max-width: 360px) {
+    .languageBtn{
+        display: none;
+    }
+}
