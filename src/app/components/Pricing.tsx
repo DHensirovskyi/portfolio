@@ -19,10 +19,10 @@ type IService = {
 
 const prices: IService[] = [
   {
-    name: "AI-Automation for your website",
-    description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
-    price: '€1000',
-    services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
+    name: "One-time development",
+    description: "For businesses that need a modern, fast and reliable website to attract customers",
+    price: '€1500',
+    services: ['Development on Next.js (speed and SEO guarantee)t', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
     duration: '/project'
   },
   {
@@ -34,10 +34,10 @@ const prices: IService[] = [
     recom: true,
   },
   {
-    name: "One-time development",
-    description: "For businesses that need a modern, fast and reliable website to attract customers",
-    price: '€1500',
-    services: ['Development on Next.js (speed and SEO guarantee)t', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
+    name: "AI-Automation for your website",
+    description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
+    price: '€1000',
+    services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
     duration: '/project'
   },
 ];
