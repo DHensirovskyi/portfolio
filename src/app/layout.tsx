@@ -7,6 +7,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import { MantineProvider } from "@mantine/core";
 import { ReactLenis } from "lenis/react";
+import ScrollToTop from "./components/ScrollToTop";
 
 const geist = Geist({
   subsets: ['latin'],
@@ -35,12 +36,13 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable} ${playfair.variable}`}>
       <ReactLenis root>
         <body className="flex flex-col min-h-screen">
+          <ScrollToTop />
           <MantineProvider>
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
+            <Header />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
           </MantineProvider>
         </body>
       </ReactLenis>

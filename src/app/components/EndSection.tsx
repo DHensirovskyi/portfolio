@@ -2,6 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import { Button } from "@mantine/core";
 import gsap from "gsap";
+import Link from "next/link";
 import { useRef } from "react";
 
 export default function EndSection(){
@@ -38,7 +39,7 @@ export default function EndSection(){
             <div className="flex flex-col items-center">
                 <h1 className="text-white text-[1.5rem] text-center sm:text-[2rem]">Ready to take your business to the next level?</h1>
                 <p className="text-white/50 sm:text-[1rem] text-[0.875rem] text-center mt-4 max-w-[640px]">Whether it's a high-performance website, a complex web application, or smart AI automation, I'm here to turn your business idea into reality.</p>
-                <Button id={'button'} className="px-10 py-4 mt-8 hover:scale-[0.97] transition ease-in-out duration-200">Discuss the project</Button>
+                <Link href={'/contact'}><Button id={'button'} className="px-10 py-4 mt-8 hover:scale-[0.97] transition ease-in-out duration-200">Discuss the project</Button></Link>
             </div>
         </section>
     )

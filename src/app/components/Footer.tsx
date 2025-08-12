@@ -61,7 +61,7 @@ const socials = [
 
 export default function Footer(){
     return(
-        <footer className=" text-white p-4 h-[410px] sm:h-[610px] bg-[radial-gradient(100%_50%_at_50%_0%,#141414_0%,#0D0D0D_100%)] border-t-[0.5] border-white/15 mt-40 sm:pt-35 pt-20">
+        <footer className=" text-white p-4 h-[410px] sm:h-[610px] bg-[radial-gradient(100%_50%_at_50%_0%,#141414_0%,#0D0D0D_100%)] border-t-[0.5] border-white/15 sm:pt-35 pt-20">
             <section className="max-w-[840px] m-auto flex flex-col pb-20">
                 <div className="mb-[42px]">
                     <h1 className="text-[1.5rem] sm:text-[2rem] sm:leading-[38.4px] leading-[30px] text-white font-light">

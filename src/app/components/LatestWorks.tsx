@@ -8,6 +8,7 @@ import { useRef } from "react";
 
 
 type IWork = {
+  slug: string;
   img: string;
   name: string;
   description: string;
@@ -16,12 +17,14 @@ type IWork = {
 
 const works: IWork[] = [
   {
+    slug: 'gartenservice',
     img: "/work1.jpg",
     name: "Gartenservice Augsburg — Corporate Website",
     description: "Development of a modern corporate website for a German company.",
     label: "Website",
   },
   {
+    slug: 'calipso',
     img: "/work2.jpg",
     name: "Calipso Movies — Web Application",
     description: "A dynamic web application for searching movies using the The Movie Data Base API.",
@@ -63,7 +66,7 @@ export default function LatestWorks() {
       </div>
 
       {works.map(work => (
-        <Link href="/works" className="block mt-[10px] group mb-15" key={work.name}>
+        <Link href={`/works/${work.slug}`} className="block mt-[10px] group mb-15" key={work.name}>
         <div className="w-full relative aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
           <Image
             src={work.img}

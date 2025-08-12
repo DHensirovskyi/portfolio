@@ -19,10 +19,10 @@ type IService = {
 
 const prices: IService[] = [
   {
-    name: "AI-Automation for your website",
-    description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
-    price: '€1000',
-    services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
+    name: "One-time development",
+    description: "For businesses that need a modern, fast and reliable website to attract customers",
+    price: '€1500',
+    services: ['Development on Next.js (speed and SEO guarantee)t', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
     duration: '/project'
   },
   {
@@ -34,10 +34,10 @@ const prices: IService[] = [
     recom: true,
   },
   {
-    name: "One-time development",
-    description: "For businesses that need a modern, fast and reliable website to attract customers",
-    price: '€1500',
-    services: ['Development on Next.js (speed and SEO guarantee)t', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
+    name: "AI-Automation for your website",
+    description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
+    price: '€1000',
+    services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
     duration: '/project'
   },
 ];
@@ -46,24 +46,24 @@ export default function Pricing() {
   const middleIndex = Math.floor(prices.length / 2);
   const ref = useRef(null)
 
-  useGSAP(() => {
-    gsap.fromTo(ref.current,{
-      scale: 15,
-      opacity: 0
-    },
-    {
-      scale: 1,
-      opacity: 1,
-      duration: 0.5,
-      ease: "ease.out",
-      scrollTrigger: {
-        trigger: ref.current,
-        start: "top 50%",
-        toggleActions: "play none none reverse",
-        once: true,
+    useGSAP(() => {
+      gsap.fromTo(ref.current,{
+        scale: 6,
+        opacity: 0
       },
-    }
-  )}, [])
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: "ease.out",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 50%",
+          toggleActions: "play none none reverse",
+          once: true,
+        },
+      }
+    )}, [])
 
   return (
     <section className="w-auto md:mt-[120px] mt-[80px]">

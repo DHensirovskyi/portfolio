@@ -22,7 +22,7 @@ export default function Home() {
       <section className="max-w-[1300px] py-0 px-6 m-auto text-white">
         <Pricing />
       </section>
-      <section className="max-w-[860px] py-0 px-6 lg:px-0 m-auto text-white">
+      <section className="max-w-[860px] py-0 px-6 lg:px-0 m-auto text-white sm:mb-40 mb-20">
         <Comments/>
         <EndSection />
       </section>
