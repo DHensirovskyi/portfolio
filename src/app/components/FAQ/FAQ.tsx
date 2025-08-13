@@ -6,9 +6,13 @@ import { data } from './data'
 import { FiPlus, FiX } from 'react-icons/fi'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { dict } from '@/app/i18n'
+import { useLanguage } from '@/app/context/LanguageContext'
 
 export default function FAQ() {
   const [opened, setOpened] = useState<string[]>([])
+  const { language } = useLanguage();
+  const t = dict[language].faq;
 
   const toggle = (value: string) => {
     setOpened(prev => (
@@ -39,7 +43,7 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col gap-4" ref={ref}>
-      {data.map((item) => {
+      {t.map((item) => {
         const isOpen = opened.includes(item.value)
 
         return (
@@ -47,7 +51,7 @@ export default function FAQ() {
             key={item.value}
             layout
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className={`rounded-2xl bg-[#141414] overflow-hidden transition-colors duration-300 ease-out hover:bg-[#191818] ${
+            className={`rounded-2xl bg-[#171717] overflow-hidden transition-colors duration-300 ease-out hover:bg-[#191818] ${
               isOpen ? 'bg-[#191818]' : ''
             }`}
           >

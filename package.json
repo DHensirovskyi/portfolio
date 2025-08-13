@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@gsap/react": "^2.1.2",
     "@mantine/carousel": "^8.2.2",
     "@mantine/core": "^8.2.2",
+    "@mantine/form": "^8.2.4",
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.34.1",
     "embla-carousel": "^8.6.0",

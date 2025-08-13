@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
+import { dict } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
 
 type IService = {
@@ -26,6 +28,8 @@ const services: IService[] = [
 ];
 
 export default function LatestWorks() {
+  const { language } = useLanguage();
+  const t = dict[language].whatido;
 
   const ref = useRef(null)
 
@@ -49,18 +53,18 @@ export default function LatestWorks() {
   return (
     <section className="w-auto md:mt-[120px] mt-[80px]" ref={ref}>
       <div className="flex justify-between items-center mb-4">
-        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">What I do</h3>
+        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">{t.line1}</h3>
         <div className="w-full h-px bg-white/20 my-10 ml-6" />
       </div>
 
       
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-        {services.map((service) => (
+        {t.services.map((service) => (
             <div
             key={service.name}
             className="rounded-[16px] bg-[#0D0D0D] border border-white/10 p-2 flex flex-col justify-between"
             >
-            <div className="h-[104px] w-full rounded-[16px] bg-[#141414] flex items-center justify-center">
+            <div className="h-[104px] w-full rounded-[16px] bg-[#171717] flex items-center justify-center">
                 <div className="rounded-full aspect-square bg-[#0D0D0D] p-4 flex items-center justify-center">
                 <Image
                     src={service.img}

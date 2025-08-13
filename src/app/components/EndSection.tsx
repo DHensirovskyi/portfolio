@@ -4,9 +4,13 @@ import { Button } from "@mantine/core";
 import gsap from "gsap";
 import Link from "next/link";
 import { useRef } from "react";
+import { useLanguage } from "../context/LanguageContext";
+import { dict } from "../i18n";
 
 export default function EndSection(){
     const ref = useRef(null)
+    const { language } = useLanguage();
+    const t = dict[language].end;
 
     useGSAP(() => {
         gsap.fromTo(ref.current,
@@ -37,9 +41,9 @@ export default function EndSection(){
         }}
         className="w-full h-auto mt-30 border-[0.5] border-white/10 rounded-[16] flex items-center justify-center py-10 px-5 sm:py-20">
             <div className="flex flex-col items-center">
-                <h1 className="text-white text-[1.5rem] text-center sm:text-[2rem]">Ready to take your business to the next level?</h1>
-                <p className="text-white/50 sm:text-[1rem] text-[0.875rem] text-center mt-4 max-w-[640px]">Whether it's a high-performance website, a complex web application, or smart AI automation, I'm here to turn your business idea into reality.</p>
-                <Link href={'/contact'}><Button id={'button'} className="px-10 py-4 mt-8 hover:scale-[0.97] transition ease-in-out duration-200">Discuss the project</Button></Link>
+                <h1 className="text-white text-[1.5rem] text-center sm:text-[2rem]">{t.line1}</h1>
+                <p className="text-white/50 sm:text-[1rem] text-[0.875rem] text-center mt-4 max-w-[640px]">{t.description}</p>
+                <Link href={'/contact'}><Button id={'button'} className="px-10 py-4 mt-8 hover:scale-[0.97] transition ease-in-out duration-200">{t.button}</Button></Link>
             </div>
         </section>
     )

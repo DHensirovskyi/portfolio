@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import { dict } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
 
 type IWork = {
@@ -33,7 +35,8 @@ const works: IWork[] = [
 ];
 
 export default function Works(){
-
+  const { language } = useLanguage();
+  const t = dict[language].works;
   const ref = useRef(null)
 
   useGSAP(() => {
@@ -55,16 +58,16 @@ export default function Works(){
 
     return(
     <main className="max-w-[860px] py-0 px-6 lg:px-0 m-auto text-white md:mt-[240px] mt-[160px] sm:mb-40 mb-20">
-        <section className="flex flex-col items-center justify-center gap-4 mb-20">
-          <div className="flex items-center border border-white/10 rounded-full px-[13px] py-[6px] bg-[#141414] text-[0.875rem] w-[67px] h-[32px]">
-            <p>Works</p>
+        <section className="flex flex-col items-center justify-center gap-4 mb-20 text-center">
+          <div className="flex items-center border border-white/10 rounded-full px-[13px] py-4 bg-[#171717] text-[0.875rem] w-auto h-[32px]">
+            <p>{t.label}</p>
           </div>
           <h1 className="text-[2.8rem] sm:text-[4.5rem] sm:leading-[110%] leading-[120%] text-white/50 font-thin">
-            The hall<br /><span className="text-white">of fame.</span>
+            {t.line1}<br /><span className="text-white">{t.line2}</span>
           </h1>
         </section>
         <section className="w-auto" ref={ref}>
-        {works.map(work => (
+        {t.arr.map(work => (
         <Link href={`/works/${work.slug}`} className="block group mt-15" key={work.name}>
         <div className="w-full relative aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
           <Image
@@ -78,7 +81,7 @@ export default function Works(){
         </div>
         <div className="flex justify-between items-center">
           <h6 className="sm:text-[1.25rem] text-[0.9rem] text-white">{work.name}</h6>
-          <div className="border border-white/10 rounded-full px-4 py-[6px] bg-[#141414] sm:text-[0.875rem] text-[0.6rem]">
+          <div className="border border-white/10 rounded-full px-4 py-[6px] bg-[#171717] sm:text-[0.875rem] text-[0.6rem]">
             {work.label}
           </div>
         </div>

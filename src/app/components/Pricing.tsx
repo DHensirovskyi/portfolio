@@ -7,44 +7,15 @@ import { useRef } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { MdStars } from "react-icons/md";
 import gsap from "gsap";
+import { dict } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
-type IService = {
-  name: string;
-  description: string;
-  price: string;
-  services: string[];
-  duration: string;
-  recom?: boolean;
-};
-
-const prices: IService[] = [
-  {
-    name: "One-time development",
-    description: "For businesses that need a modern, fast and reliable website to attract customers",
-    price: '€1500',
-    services: ['Development on Next.js (speed and SEO guarantee)t', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
-    duration: '/project'
-  },
-  {
-    name: "Website + AI-Automation",
-    description: "For companies that want not just an online presence, but a system that works for them 24/7, saves time and doesn't miss a single customer.",
-    price: '€2500',
-    services: ['Setting up a system of instant response to requests', 'AI integration for analyzing and qualifying queries', 'Automatically send notifications in Telegram/WhatsApp'],
-    duration: '/project',
-    recom: true,
-  },
-  {
-    name: "AI-Automation for your website",
-    description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
-    price: '€1000',
-    services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
-    duration: '/project'
-  },
-];
 
 export default function Pricing() {
-  const middleIndex = Math.floor(prices.length / 2);
   const ref = useRef(null)
+  const { language } = useLanguage();
+  const t = dict[language].pricing;
+  const middleIndex = Math.floor(t.plans.length / 2);
 
     useGSAP(() => {
       gsap.fromTo(ref.current,{
@@ -68,13 +39,13 @@ export default function Pricing() {
   return (
     <section className="w-auto md:mt-[120px] mt-[80px]">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">Pricing</h3>
+        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">{t.line1}</h3>
         <div className="w-full h-px bg-white/20 my-10 ml-6" />
       </div>
 
       
       <div className="grid xl:gap-8 gap-4 grid-cols-1 xl:grid-cols-3 xl:mt-10 mt-0">
-      {prices.map((price, index) => {
+      {t.plans.map((price, index) => {
           const isMiddle = index === middleIndex;
           return(
             <div
@@ -83,7 +54,7 @@ export default function Pricing() {
               <div className="text-left flex-1 flex-col justify-start">
                   <span className="flex justify-between items-center">
                     <p className="sm:text-[1.3rem] text-[1.2rem] text-white mb-2">{price.name}</p>
-                    {price.recom ? 
+                    {price.recom? 
                     <span ref={ref} className="w-4.7 h-4.5 mb-1.5">
                       <MdStars className="text-[#CAE8BD] text-[1.2rem]"/>
                     </span>
@@ -98,7 +69,7 @@ export default function Pricing() {
                   <span className="flex items-end font-light mt-1.5"><p className="text-white text-[1.922rem]/9" >{price.price}</p><p className="text-[1rem]">{price.duration}</p></span>
               </div>
               <div>
-                  <Link href={"/contact"}><Button id={'button'} className="w-full py-4 hover:scale-[0.97] transition ease-in-out duration-200"> Discuss the project</Button></Link>
+                  <Link href={"/contact"}><Button id={'button'} className="w-full py-4 hover:scale-[0.97] transition ease-in-out duration-200">{t.button}</Button></Link>
               </div>
               <div className="flex-col flex gap-1">
                   {price.services.map((service, i) => (

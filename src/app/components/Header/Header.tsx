@@ -7,8 +7,8 @@ import { IoPerson } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
 import classes from './Header.module.css'
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const navItems = [
   { href: '/', icon: <GoHomeFill fontSize="1.5rem" /> },
@@ -20,15 +20,15 @@ const navItems = [
 export default function Header(){
   const pathname = usePathname()
   const segment = useSelectedLayoutSegment()
+  const { language, setLanguage } = useLanguage();
 
-  const [language, setLanguage] = useState<'EN' | 'DE'>('EN');
 
   const normalizedPath = pathname.startsWith('/works/') ? '/works' : pathname;
 
   const activeIndex = navItems.findIndex(item => item.href === normalizedPath)
 
   function toggleLanguage(){
-    setLanguage(language === 'EN' ? 'DE' : 'EN')
+    setLanguage(language === 'En' ? 'De' : 'En')
   }
 
   return(

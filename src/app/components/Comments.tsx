@@ -6,27 +6,15 @@ import { FaStar } from "react-icons/fa6";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from "gsap";
 import { useRef } from "react";
+import { dict } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger)
 
-type IComment = {
-  description: string;
-  img: string;
-  name: string;
-  position: string;
-};
-
-const comments: IComment[] = [
-  {
-    description: "“Dmytro made the development process smooth and exciting. His unique approach and dedication resulted in a huge business results.”",
-    img: "/commentPerson.svg",
-    name: "Vadim Nistor",
-    position: 'Business owner',
-  },
-];
-
 export default function Comments() {
   const comment = useRef(null)
+  const { language } = useLanguage();
+  const t = dict[language].comments;
 
   useGSAP(() => {
   gsap.set(comment.current, {
@@ -53,16 +41,16 @@ export default function Comments() {
   return (
     <section className="w-auto md:mt-[120px] mt-[80px]">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">What others say</h3>
+        <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">{t.line1}</h3>
         <div className="w-full h-px bg-white/20 my-10 ml-6" />
       </div>
 
       
         <div ref={comment}>
-        {comments.map((comment) => (
+        {t.comment.map((comment) => (
           <div className="w-full" key={comment.name}>
             <div
-              className="rounded-[16px] bg-[#141414] p-10 flex flex-col gap-4 justify-between">
+              className="rounded-[16px] bg-[#171717] p-10 flex flex-col gap-4 justify-between">
               <div className="flex gap-1">
                 <FaStar className="text-[#CAE8BD] text-[1rem]"/>
                 <FaStar className="text-[#CAE8BD] text-[1rem]"/>

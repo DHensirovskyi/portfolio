@@ -1,9 +1,13 @@
+'use client'
+
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { dict } from "../i18n";
+import { useLanguage } from "../context/LanguageContext";
 
 
 
@@ -60,18 +64,21 @@ const socials = [
 ]
 
 export default function Footer(){
+    const { language } = useLanguage();
+    const t = dict[language].footer;
+
     return(
         <footer className=" text-white p-4 h-[410px] sm:h-[610px] bg-[radial-gradient(100%_50%_at_50%_0%,#141414_0%,#0D0D0D_100%)] border-t-[0.5] border-white/15 sm:pt-35 pt-20">
             <section className="max-w-[840px] m-auto flex flex-col pb-20">
                 <div className="mb-[42px]">
                     <h1 className="text-[1.5rem] sm:text-[2rem] sm:leading-[38.4px] leading-[30px] text-white font-light">
-                        Let's create something <br/><span className="text-white/50">awesome together</span>.
+                       {t.line1}<br/><span className="text-white/50">{t.line11}</span>{t.line12}
                     </h1>
                 </div>
                 <nav>
-                    <p className="text-[0.875rem] text-white">Pages</p>
+                    <p className="text-[0.875rem] text-white">{t.line2}</p>
                     <ul>
-                    {links.map(link => (
+                    {t.nav.map(link => (
                         <li className="my-3 text-[1rem]" key={link.name}>
                             <Link className="text-white/50 hover:text-white/100 active:text-white/100 transition duration-300 font-normal" href={link.path}>{link.name}</Link>
                         </li>
@@ -83,7 +90,7 @@ export default function Footer(){
                         <Link key={soc.id} className="text-white/100 hover:text-white/50 active:text-white/50 transition duration-300" href={soc.path}>{soc.icon}</Link>
                     ))}
                 </nav>
-                <p className="text-[1rem] text-white/50 font-light">Built by Dmytro Hensirovskyi</p>
+                <p className="text-[1rem] text-white/50 font-light">{t.line3}</p>
             </section>
         </footer>
     )
