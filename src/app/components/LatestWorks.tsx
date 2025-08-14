@@ -79,7 +79,7 @@ export default function LatestWorks() {
     <section className="w-auto" ref={ref}>
       <div className="flex justify-between items-center">
         <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">{t.line1}</h3>
-        <div className="w-full h-px bg-white/20 my-10 mx-6" />
+        <div className="w-full h-px bg-white/20 my-10 mx-4" />
         <Link href="/works">
           <p className="text-[1rem] text-[#CAE8BD] hover:text-white whitespace-nowrap">{t.line2}</p>
         </Link>

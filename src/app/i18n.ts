@@ -202,28 +202,29 @@ export const dict = {
       back: '‹ Back',
       other: 'Other projects',
       seeAll: 'See all',
+      link: 'Visit'
     },
     workDetails: {
       gartenservice: {
-        name: 'Gartenservice Augsburg — Corporate Website',
+        name: 'Gartenservice Augsburg',
         label: 'Website',
         description:
-          'Development of a modern corporate website for a German company.',
-        subNames: ['Overview & Goals', 'Design & Implementation'],
+          'Created a modern, responsive website for a garden and landscape company in Augsburg. The goal was to demonstrate how the site can effectively attract local customers and process applications 24/7. Emphasis was placed on a simple structure, fast loading and user-friendliness.',
+        subNames: ['Integration with Headless CMS (Contentful)', 'Dynamic content display'],
         subDescriptions: [
-          'The goal was to create a clean, fast site that clearly explains services and converts visitors into leads through a focused contact flow.',
-          'Built with modern stack and responsive UI. Emphasis on content structure, accessibility and SEO‑ready metadata.',
+          'To enable the client to easily modify texts and add services without developer assistance, I integrated the website with Headless CMS Contentful. I designed an intuitive content structure that allows for the management of all text and media blocks on the website.',
+          ' All information that the client enters into Contentful is automatically and beautifully displayed on the website. This screenshot shows the “Services” section, the content for which is fully managed by the client through the CMS, proving the successful integration of the frontend and backend.',
         ],
       },
       calipso: {
-        name: 'Calipso Movies — Web Application',
+        name: 'Calipso Movies',
         label: 'WebApp',
         description:
-          'A dynamic web application for searching movies using the The Movie Database API.',
-        subNames: ['Search & Details', 'Performance & Architecture'],
+          'A personal project created to demonstrate skills in working with modern frontend technologies. This is a SPA (Single Page Application) for searching and viewing information about movies, built on Next.js using The Movie Database (TMDB) API.',
+        subNames: ['Dynamic routing and parallel requests', 'State management and Local Storage'],
         subDescriptions: [
-          'Instant search with debouncing and clear result cards. Detail pages highlight rating, synopsis and media.',
-          'Lightweight architecture with client/server split. Optimized requests and smooth UI transitions.',
+          'A unique page is created for each film and actor using Next.js dynamic routing. On this page, data about both the film itself and the cast is loaded simultaneously (via Promise.all), which optimizes loading speed.',
+          "A fully functional “Favorites” system has been implemented. The status of the list of favorite movies is managed globally using React Context, which allows different components to access the latest data. The list is stored in localStorage so that the user's selection is not lost after reloading the page.",
         ],
       },
     },
@@ -249,7 +250,7 @@ export const dict = {
 
     latestworks: {
       line1: 'Neueste Arbeiten',
-      line2: 'Alle ansehen',
+      line2: 'Alle',
       works: [
         {
           slug: 'gartenservice',
@@ -449,29 +450,30 @@ export const dict = {
     workPage: {
       back: '‹ Zurück',
       other: 'Weitere Projekte',
-      seeAll: 'Alle ansehen',
+      seeAll: 'Alle',
+      link: 'Besuchen'
     },
     workDetails: {
       gartenservice: {
-        name: 'Gartenservice Augsburg — Unternehmenswebsite',
+        name: 'Gartenservice Augsburg',
         label: 'Website',
         description:
-          'Entwicklung einer modernen Unternehmenswebsite für ein deutsches Unternehmen.',
-        subNames: ['Übersicht & Ziele', 'Design & Umsetzung'],
+          'Erstellung einer modernen, responsiven Website für ein Garten- und Landschaftsbauunternehmen in Augsburg. Ziel war es zu zeigen, wie die Website effektiv lokale Kunden anziehen und Anfragen rund um die Uhr bearbeiten kann. Der Schwerpunkt lag auf einer einfachen Struktur, schneller Ladezeit und Benutzerfreundlichkeit.',
+        subNames: ['Integration mit Headless CMS (Contentful)', 'Dynamische Inhaltsanzeige'],
         subDescriptions: [
-          'Ziel war eine klare, schnelle Seite, die Leistungen verständlich erklärt und Besucher durch einen fokussierten Kontakt‑Flow in Anfragen verwandelt.',
-          'Mit modernem Stack und responsivem UI. Fokus auf Inhaltsstruktur, Zugänglichkeit und SEO‑fähige Metadaten.',
+          'Um dem Kunden die Möglichkeit zu geben, Texte und Dienstleistungen einfach zu ändern, ohne die Hilfe eines Entwicklers, habe ich die Website mit dem Headless CMS Contentful integriert. Ich habe eine intuitive Inhaltsstruktur entworfen, die die Verwaltung aller Text- und Medienblöcke auf der Website ermöglicht.',
+          'Alle Informationen, die der Kunde in Contentful eingibt, werden automatisch und ansprechend auf der Website angezeigt. Dieser Screenshot zeigt den Abschnitt „Dienstleistungen“, dessen Inhalte vollständig vom Kunden über das CMS verwaltet werden, was die erfolgreiche Integration von Frontend und Backend beweist.',
         ],
       },
       calipso: {
-        name: 'Calipso Movies — Webanwendung',
+        name: 'Calipso Movies',
         label: 'WebApp',
         description:
-          'Dynamische Webanwendung zur Filmsuche mit der The Movie Database API.',
-        subNames: ['Suche & Details', 'Performance & Architektur'],
+          'Ein persönliches Projekt, das entwickelt wurde, um Fähigkeiten im Umgang mit modernen Frontend-Technologien zu demonstrieren. Es handelt sich um eine SPA (Single Page Application) zur Suche und Anzeige von Informationen über Filme, erstellt mit Next.js unter Verwendung der The Movie Database (TMDB) API.',
+        subNames: ['Dynamisches Routing und parallele Anfragen', 'Zustandsverwaltung und Local Storage'],
         subDescriptions: [
-          'Sofortsuche mit Debounce und klare Ergebnis‑Karten. Detailseiten mit Bewertung, Beschreibung und Medien.',
-          'Schlanke Architektur mit Client/Server‑Trennung. Optimierte Requests und flüssige UI‑Übergänge.',
+          'Für jeden Film und Schauspieler wird mit dem dynamischen Routing von Next.js eine eigene Seite erstellt. Auf dieser Seite werden gleichzeitig (über Promise.all) Daten sowohl zum Film selbst als auch zur Besetzung geladen, was die Ladegeschwindigkeit optimiert.',
+          'Ein vollständig funktionsfähiges „Favoriten“-System wurde implementiert. Der Status der Favoritenliste wird global mit React Context verwaltet, sodass verschiedene Komponenten auf die aktuellen Daten zugreifen können. Die Liste wird im localStorage gespeichert, damit die Auswahl des Benutzers nach dem Neuladen der Seite nicht verloren geht.',
         ],
       },
     },

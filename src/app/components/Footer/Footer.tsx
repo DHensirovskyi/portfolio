@@ -6,8 +6,10 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaTelegram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { dict } from "../i18n";
-import { useLanguage } from "../context/LanguageContext";
+import { dict } from "../../i18n";
+import { useLanguage } from "../../context/LanguageContext";
+import { AnimatePresence, motion } from "framer-motion";
+import classes from './Footer.module.css'
 
 
 
@@ -64,17 +66,37 @@ const socials = [
 ]
 
 export default function Footer(){
-    const { language } = useLanguage();
+    const { language, setLanguage } = useLanguage();
     const t = dict[language].footer;
 
+    function toggleLanguage(){
+        setLanguage(language === 'En' ? 'De' : 'En')
+    }
+
     return(
-        <footer className=" text-white p-4 h-[410px] sm:h-[610px] bg-[radial-gradient(100%_50%_at_50%_0%,#141414_0%,#0D0D0D_100%)] border-t-[0.5] border-white/15 sm:pt-35 pt-20">
-            <section className="max-w-[840px] m-auto flex flex-col pb-20">
+        <footer className=" text-white p-4 h-[480px] sm:h-[610px] bg-[radial-gradient(100%_50%_at_50%_0%,#141414_0%,#0D0D0D_100%)] border-t-[0.5] border-white/15 sm:pt-35 pt-20">
+            <section className="max-w-[840px] m-auto flex flex-col pb-10">
                 <div className="mb-[42px]">
                     <h1 className="text-[1.5rem] sm:text-[2rem] sm:leading-[38.4px] leading-[30px] text-white font-light">
                        {t.line1}<br/><span className="text-white/50">{t.line11}</span>{t.line12}
                     </h1>
                 </div>
+
+                <button onClick={toggleLanguage} className={classes.languageBtn}>
+                        <AnimatePresence mode="wait">
+                        <motion.p
+                            key={language}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-4 font-semibold absolute px-1 py-5"
+                        >
+                            {language}
+                        </motion.p>
+                        </AnimatePresence>
+                    </button>
+
                 <nav>
                     <p className="text-[0.875rem] text-white">{t.line2}</p>
                     <ul>

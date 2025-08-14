@@ -31,12 +31,14 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   background-color: #CAE8BD;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 #button-2{
   color: rgb(255, 255, 255);
   background-color: rgb(255, 255, 255, 0.08);
   border-radius: 16px;
+  cursor: pointer;
 }
 
 html.lenis,

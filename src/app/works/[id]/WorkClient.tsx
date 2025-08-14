@@ -45,7 +45,6 @@ export default function WorkClient({
     { scope: mainRef, dependencies: [work.slug, language] }
   );
 
-  // Локализуем текущую работу
   const localizedWork = useMemo(() => {
     const l = t.workDetails?.[work.slug as keyof typeof t.workDetails];
     if (!l) return work;
@@ -59,7 +58,6 @@ export default function WorkClient({
     };
   }, [t, work]);
 
-  // Локализуем "два других"
   const localizedOther = useMemo(() => {
     return otherTwo.map((o) => {
       const l = t.workDetails?.[o.slug as keyof typeof t.workDetails];
@@ -137,7 +135,7 @@ export default function WorkClient({
       <section>
         <div className="flex justify-between items-center">
           <h3 className="md:text-[2rem] text-[24px] whitespace-nowrap">{t.workPage.other}</h3>
-          <div className="w-full h-px bg-white/20 lg:my-0 my-10 mx-6" />
+          <div className="w-full h-px bg-white/20 lg:my-0 my-10 mx-4" />
           <Link href="/works">
             <p className="text-[1rem] text-[#CAE8BD] hover:text-white whitespace-nowrap">{t.workPage.seeAll}</p>
           </Link>
@@ -160,7 +158,7 @@ export default function WorkClient({
                 <h6 className="sm:text-[1.25rem] text-[0.9rem] text-white group-hover:opacity-80 transition">
                   {o.name}
                 </h6>
-                <div className="border border-white/10 rounded-full px-4 py-[6px] bg-[#141414] sm:text-[0.875rem] text-[0.6rem]">
+                <div className="border border-white/10 rounded-full px-4 py-[6px] flex items-center bg-[#141414] sm:text-[0.875rem] text-[0.6rem]">
                   {o.label}
                 </div>
               </div>

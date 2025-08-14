@@ -4,7 +4,7 @@ import "./globals.css";
 import '@mantine/carousel/styles.css';
 import '@mantine/carousel/styles.css';
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 import { MantineProvider } from "@mantine/core";
 import { ReactLenis } from "lenis/react";
 import ScrollToTop from "./components/ScrollToTop";

@@ -39,7 +39,7 @@ export default function AboutMe(){
           </h1>
         </section>
         <section className="flex flex-col sm:gap-20 gap-10" ref={ref}>
-        <Image src={'/me.jpg'} width={840} height={487} alt={'me'} className="rounded-[16px] w-auto"></Image>
+        <Image src={'/me.jpg'} width={840} height={487} alt={'me'} className="rounded-[16px] w-auto" priority></Image>
 
         <div className="flex flex-col items-center justify-center gap-6">
             <p className="sm:text-[2rem] text-[1.5rem]">{t.line3}</p>

@@ -3,9 +3,14 @@
 import { FaLink } from 'react-icons/fa';
 import { Button } from '@mantine/core';
 import classes from './LinkButton.module.css';
+import { useLanguage } from '@/app/context/LanguageContext';
+import { dict } from '@/app/i18n';
 
 
 export default function LinkButton({ url }: { url: string }) {
+  const { language } = useLanguage();
+  const t = dict[language].workPage;
+
   return (
     <div className={classes.stickyWrapper}>
       <Button
@@ -22,7 +27,7 @@ export default function LinkButton({ url }: { url: string }) {
         }}
         rightSection={<FaLink size={18} />}
       >
-        <p className='font-semibold'>Visit</p>
+        <p className='font-semibold'>{t.link}</p>
       </Button>
     </div>
   );
