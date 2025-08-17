@@ -69,7 +69,3 @@ html.lenis body{
 .mantine-Accordion-item[data-active="true"] .chevron-icon {
   transform: rotate(180deg);
 }
-
-html, body {
-  overflow-x: hidden;
-}
