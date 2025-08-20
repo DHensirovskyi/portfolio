@@ -30,7 +30,7 @@ export default function ParallaxGSAP() {
   className="relative w-[240px] h-[447px] sm:w-[440px] sm:h-[820px] will-change-transform overflow-hidden rounded-[inherit]"
 >
   <Image
-    src="/person.avif"
+    src="/meBlack.png"
     alt="person"
     fill
     priority
