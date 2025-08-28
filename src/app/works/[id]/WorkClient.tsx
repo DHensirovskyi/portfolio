@@ -146,7 +146,7 @@ export default function WorkClient({
             <Link key={o.slug} href={`/works/${o.slug}`} className="flex flex-col gap-0 group">
               <div className="w-full relative aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
                 <Image
-                  src={o.images[0]}
+                  src={o.otherImg}
                   alt={o.name}
                   width={412}
                   height={305}

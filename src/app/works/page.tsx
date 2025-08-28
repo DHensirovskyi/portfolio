@@ -19,6 +19,13 @@ type IWork = {
 
 const works: IWork[] = [
   {
+    slug: 'velvera',
+    img: '/work3.jpg',
+    name: 'Velvera — Modern Salon with AI Automation',
+    description: 'Modern salon site with AI-powered booking and email automation.',
+    label: 'Website',
+  },
+  {
     slug: 'gartenservice',
     img: "/work1.jpg",
     name: "Gartenservice Augsburg — Corporate Website",

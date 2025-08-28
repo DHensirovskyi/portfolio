@@ -26,19 +26,19 @@ export default function ParallaxGSAP() {
   return (
     <section className="flex justify-center items-center relative overflow-hidden mt-20">
       <div
-  ref={imageRef}
-  className="relative w-[240px] h-[447px] sm:w-[440px] sm:h-[820px] will-change-transform overflow-hidden rounded-[inherit]"
->
-  <Image
-    src="/person.avif"
-    alt="person"
-    fill
-    priority
-    className="object-cover object-top"
-  />
+        ref={imageRef}
+        className="relative w-[341px] h-[600px] sm:w-[440px] sm:h-[820px] will-change-transform overflow-hidden rounded-[inherit]"
+      >
+        <Image
+          src="/meBlack.png"
+          alt="person"
+          fill
+          priority
+          className="object-cover object-top"
+        />
 
-  <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-10 bg-gradient-to-b from-transparent via-[#0D0D0D]/90 to-[#0D0D0D]" />
-</div>
+        <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-10 bg-gradient-to-b from-transparent via-[#0D0D0D]/90 to-[#0D0D0D]" />
+      </div>
 
 
     </section>

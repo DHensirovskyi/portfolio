@@ -69,3 +69,13 @@ html.lenis body{
 .mantine-Accordion-item[data-active="true"] .chevron-icon {
   transform: rotate(180deg);
 }
+
+
+html { overflow-y: scroll; }
+
+@supports (scrollbar-gutter: stable) {
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}

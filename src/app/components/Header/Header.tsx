@@ -64,9 +64,9 @@ export default function Header(){
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="text-4 font-semibold absolute"
+                className="text-4 font-semibold absolute text-white"
               >
-                {language}
+              {language}
               </motion.p>
             </AnimatePresence>
           </button>

@@ -10,7 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { dict } from '../i18n';
 
 type IWorkBase = {
-  slug: 'gartenservice' | 'calipso';
+  slug: string;
   img: string;
 };
 
@@ -22,15 +22,14 @@ type IWorkText = {
 };
 
 const baseWorks: IWorkBase[] = [
+  { slug: 'velvera', img: '/work3.jpg' },
   { slug: 'gartenservice', img: '/work1.jpg' },
-  { slug: 'calipso', img: '/work2.jpg' },
 ];
 
 export default function LatestWorks() {
   const { language } = useLanguage();
   const t = dict[language].latestworks;
 
-  // Регистрация плагина (важно для scrollTrigger)
   gsap.registerPlugin(ScrollTrigger);
 
   const ref = useRef<HTMLDivElement | null>(null);
@@ -47,7 +46,7 @@ export default function LatestWorks() {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: ref.current,
-          start: 'top 85%',
+          start: 'top 100%',
           toggleActions: 'play none none reverse',
         },
       }

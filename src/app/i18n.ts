@@ -19,16 +19,16 @@ export const dict = {
       line2: 'See all',
       works: [
         {
+          slug: 'velvera',
+          name: 'Velvera — Modern Salon with AI Automation',
+          description: 'Modern salon site with AI-powered booking and email automation.',
+          label: 'Website',
+        },
+        {
           slug: 'gartenservice',
           name: 'Gartenservice Augsburg — Corporate Website',
           description: 'Development of a modern corporate website for a German company.',
           label: 'Website',
-        },
-        {
-          slug: 'calipso',
-          name: 'Calipso Movies — Web Application',
-          description: 'A dynamic web application for searching movies using the The Movie Database API.',
-          label: 'WebApp',
         },
       ],
     },
@@ -159,6 +159,12 @@ export const dict = {
         line2: 'of fame.',
         label: 'Works',
         arr: [
+            {
+              slug: 'velvera',
+              img: "/work3.jpg",
+              name: 'Velvera — Modern Salon with AI Automation',
+              label: 'Website',
+            },
             {   slug: 'gartenservice',
                 img: "/work1.jpg",
                 name: 'Gartenservice Augsburg — Corporate Website',
@@ -205,6 +211,22 @@ export const dict = {
       link: 'Visit'
     },
     workDetails: {
+      velvera: {
+        slug: 'velvera',
+        name: 'Velvera',
+        label: 'Website',
+        description:
+          'Website with AI assistant for salons that cuts no-shows, sends automatic reminders, and captures Google reviews — fully on-brand, running 24/7. It saves staff time and cost, fills idle slots, and keeps clients on track — cheaper than one missed appointment.',
+      
+        subNames: [
+          'Booking & Email Automation',
+          'Analytics & Daily Report',
+        ],
+        subDescriptions: [
+          'Clients receive instant confirmations, one-click cancel, and on-time reminders in your brand voice. Clear, mobile-ready emails with optional ICS calendar attach. Fewer no-shows and phone calls, no manual WhatsApp nudges — more returning customers with near-zero effort.',
+          'Owner clarity over guesswork: 7-day confirmed vs cancelled, conversion trend, and suggested open slots for tomorrow. One-click daily PDF report — ready for the team. Faster decisions, measurable utilization lift (up to +20%), and zero training required.',
+        ],
+      },           
       gartenservice: {
         name: 'Gartenservice Augsburg',
         label: 'Website',
@@ -253,16 +275,16 @@ export const dict = {
       line2: 'Alle',
       works: [
         {
+          slug: 'velvera',
+          name: 'Velvera — Moderner Salon mit KI-Automatisierung',
+          description: 'Moderne Salon-Website mit KI-gestützter Terminvergabe und E-Mail-Automation.',
+          label: 'Website',
+        },        
+        {
           slug: 'gartenservice',
           name: 'Gartenservice Augsburg — Unternehmenswebsite',
           description: 'Entwicklung einer modernen Unternehmenswebsite für ein deutsches Unternehmen.',
           label: 'Website',
-        },
-        {
-          slug: 'calipso',
-          name: 'Calipso Movies — Webanwendung',
-          description: 'Dynamische Webanwendung zur Filmsuche mit der The Movie Database API.',
-          label: 'WebApp',
         },
       ],
     },
@@ -454,6 +476,22 @@ export const dict = {
       link: 'Besuchen'
     },
     workDetails: {
+      velvera: {
+        slug: 'velvera',
+        name: 'Velvera',
+        label: 'Website',
+        description:
+          'Website mit KI-Assistent für Salons, der No-Shows senkt, automatisch erinnert und Google-Bewertungen einsammelt — vollständig gebrandet, 24/7 im Hintergrund. Spart Zeit und Personalkosten, füllt leere Slots und hält Kund:innen zuverlässig im Flow — günstiger als ein ausgefallener Termin.',
+      
+        subNames: [
+          'Buchung & E-Mail-Automation',
+          'Analytics & Tagesbericht',
+        ],
+        subDescriptions: [
+          'Kund:innen erhalten sofortige Bestätigung, 1-Klick-Storno und punktgenaue Erinnerungen in Ihrem Branding. Klar formulierte Mails, mobil optimiert; optional ICS-Kalenderdatei. Weniger Ausfälle und Telefonate, keine WhatsApp-Erinnerungen von Hand — mehr Stammgäste mit minimalem Aufwand.',
+          'Transparente Inhaber-Sicht statt Bauchgefühl: 7-Tage-Vergleich bestätigt vs. storniert, Conversion-Trend und Vorschläge freier Slots für morgen. Tagesbericht als PDF in einem Klick — bereit fürs Team. Schnellere Entscheidungen, messbar mehr Auslastung (bis +20 %) und null Schulungsaufwand.',
+        ],
+      },      
       gartenservice: {
         name: 'Gartenservice Augsburg',
         label: 'Website',
