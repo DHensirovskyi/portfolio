@@ -1,15 +1,16 @@
 export interface IWorks{
-    slug: string;
-    name: string;
-    label: string;
-    year: number;
-    link: string;
-    border: boolean; 
-    description: string;
-    images: string[];
-    subNames: string[];
-    subDescriptions: string[],
-    otherImg: string,
+  slug: string;
+  name: string;
+  label: string;
+  year: number;
+  link: string;
+  border: boolean; 
+  description: string;
+  images: string[];
+  subNames: string[];
+  subDescriptions: string[],
+  otherImg: string,
+  video?: string[],
 }
 
 export const works:IWorks[] = [
@@ -23,12 +24,13 @@ export const works:IWorks[] = [
         description: `An AI assistant for salons that cuts no-shows, sends automatic reminders, and captures Google reviews — fully on-brand, running 24/7. It saves staff time and cost, fills idle slots, and keeps clients on track — cheaper than one missed appointment.`,
         otherImg: '/work3.jpg',
         images: ['/velvera/img3.jpg', '/velvera/img1.jpg', '/velvera/img2.jpg'],
+        video: ['/velvera/velvera.mp4'],
         subNames: ['Booking & Email Automation', 'Analytics & Daily Report'],
         subDescriptions: [
-          'Clients receive instant confirmations, one-click cancel, and on-time reminders (T-1 / T-2h) in your brand voice. Clear, mobile-ready emails with optional ICS calendar attach. Fewer no-shows and phone calls, no manual WhatsApp nudges — more returning customers with near-zero effort.',
-          'Owner clarity over guesswork: 7-day confirmed vs cancelled, conversion trend, and suggested open slots for tomorrow. One-click daily PDF report — ready for the team. Faster decisions, measurable utilization lift (up to +20%), and zero training required.'
+        'Clients receive instant confirmations, one-click cancel, and on-time reminders (T-1 / T-2h) in your brand voice. Clear, mobile-ready emails with optional ICS calendar attach. Fewer no-shows and phone calls, no manual WhatsApp nudges — more returning customers with near-zero effort.',
+        'Owner clarity over guesswork: 7-day confirmed vs cancelled, conversion trend, and suggested open slots for tomorrow. One-click daily PDF report — ready for the team. Faster decisions, measurable utilization lift (up to +20%), and zero training required.'
         ]
-    },      
+    },
     {
         slug: 'gartenservice',
         name: 'Gartenservice Augsburg',
