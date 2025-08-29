@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,6 +11,96 @@ import { useLanguage } from '@/app/context/LanguageContext';
 import { dict } from '@/app/i18n';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+function AutoPlayVideo({
+  src,
+  poster,
+  className,
+  loop = true,
+}: {
+  src: string;
+  poster?: string;
+  className?: string;
+  loop?: boolean;
+}) {
+  const vRef = useRef<HTMLVideoElement | null>(null);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    const v = vRef.current;
+    if (!v) return;
+
+    const onPlay = () => setPaused(false);
+    const onPause = () => setPaused(true);
+
+    v.addEventListener('play', onPlay);
+    v.addEventListener('pause', onPause);
+    v.controls = true;
+
+    if (v.paused) v.play().catch(() => {});
+
+    return () => {
+      v.removeEventListener('play', onPlay);
+      v.removeEventListener('pause', onPause);
+    };
+  }, []);
+
+  const togglePlay = () => {
+    const v = vRef.current;
+    if (!v) return;
+    if (v.paused) v.play();
+    else v.pause();
+  };
+
+  return (
+    <div className="relative group">
+      <video
+        ref={vRef}
+        className={`${className ?? ''}`}
+        poster={poster}
+        playsInline
+        muted
+        autoPlay
+        loop={loop}
+        preload="metadata"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+
+      <button
+        type="button"
+        aria-label={paused ? 'Play' : 'Pause'}
+        onClick={togglePlay}
+        className="absolute inset-x-0 top-0"
+        style={{
+          bottom: 56,
+          background: 'transparent',
+          cursor: 'pointer',
+        }}
+      />
+
+      <div
+        className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${
+          paused ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'
+        }`}
+      >
+        <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden>
+          <circle cx="32" cy="32" r="28" fill="rgba(0,0,0,0.45)" />
+          {paused ? (
+            <polygon points="26,20 46,32 26,44" fill="#fff" />
+          ) : (
+            <>
+              <rect x="23" y="20" width="8" height="24" fill="#fff" />
+              <rect x="36" y="20" width="8" height="24" fill="#fff" />
+            </>
+          )}
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+
 
 export default function WorkClient({
   work,
@@ -87,16 +177,24 @@ export default function WorkClient({
         </div>
       </section>
 
-      <p className="sm:text-[2rem] text-[1.5rem] font-thin">{localizedWork.description}</p>
+      {localizedWork.slug === 'velvera' && localizedWork.video?.[0] ? (
+        <AutoPlayVideo
+          src={localizedWork.video[0]}
+          poster="/velvera/poster.png"
+          className={`w-[100%] rounded-[16px] ${localizedWork.border && 'border border-white/20'}`}
+        />
+      ) : (
+        <Image
+          priority
+          width={840}
+          height={630}
+          src={localizedWork.images[0]}
+          alt={localizedWork.name}
+          className={`w-[100%] rounded-[16px] ${localizedWork.border && 'border border-white/20'}`}
+        />
+      )}
 
-      <Image
-        priority
-        width={840}
-        height={630}
-        src={localizedWork.images[0]}
-        alt={localizedWork.name}
-        className={`w-[100%] rounded-[16px] ${localizedWork.border && 'border border-white/20'}`}
-      />
+      <p className="sm:text-[2rem] text-[1.5rem] font-thin">{localizedWork.description}</p>
 
       <section className="flex flex-col gap-[65px]">
         <article>
@@ -145,13 +243,21 @@ export default function WorkClient({
           {localizedOther.map((o) => (
             <Link key={o.slug} href={`/works/${o.slug}`} className="flex flex-col gap-0 group">
               <div className="w-full relative aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
-                <Image
-                  src={o.otherImg}
-                  alt={o.name}
-                  width={412}
-                  height={305}
-                  className={`rounded-[16px] w-full mh-[305px] object-cover ${o.border && 'border border-white/20'}`}
-                />
+                {o.slug === 'velvera' ? (
+                  <AutoPlayVideo
+                    src="/velvera/velvera.mp4"
+                    poster="/velvera/poster.png"
+                    className="w-full h-full object-cover rounded-[16px]"
+                  />
+                ) : (
+                  <Image
+                    src={o.otherImg}
+                    alt={o.name}
+                    width={412}
+                    height={305}
+                    className={`rounded-[16px] w-full mh-[305px] object-cover ${o.border && 'border border-white/20'}`}
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300" />
               </div>
               <div className="flex justify-between">
