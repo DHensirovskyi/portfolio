@@ -90,8 +90,8 @@ function AutoPlayVideo({
             <polygon points="26,20 46,32 26,44" fill="#fff" />
           ) : (
             <>
-              <rect x="23" y="20" width="8" height="24" fill="#fff" />
-              <rect x="36" y="20" width="8" height="24" fill="#fff" />
+              <rect x="23" y="20" width="6" height="24" fill="#fff" />
+              <rect x="35" y="20" width="6" height="24" fill="#fff" />
             </>
           )}
         </svg>
