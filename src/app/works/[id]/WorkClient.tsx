@@ -243,13 +243,6 @@ export default function WorkClient({
           {localizedOther.map((o) => (
             <Link key={o.slug} href={`/works/${o.slug}`} className="flex flex-col gap-0 group">
               <div className="w-full relative aspect-[4/3] rounded-[16px] overflow-hidden mb-6">
-                {o.slug === 'velvera' ? (
-                  <AutoPlayVideo
-                    src="/velvera/velvera.mp4"
-                    poster="/velvera/poster.png"
-                    className="w-full h-full object-cover rounded-[16px]"
-                  />
-                ) : (
                   <Image
                     src={o.otherImg}
                     alt={o.name}
@@ -257,7 +250,6 @@ export default function WorkClient({
                     height={305}
                     className={`rounded-[16px] w-full mh-[305px] object-cover ${o.border && 'border border-white/20'}`}
                   />
-                )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300" />
               </div>
               <div className="flex justify-between">
