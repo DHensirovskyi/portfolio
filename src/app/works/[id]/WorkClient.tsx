@@ -36,7 +36,6 @@ function AutoPlayVideo({
     v.addEventListener('play', onPlay);
     v.addEventListener('pause', onPause);
     v.controls = true;
-
     if (v.paused) v.play().catch(() => {});
 
     return () => {
@@ -56,7 +55,7 @@ function AutoPlayVideo({
     <div className="relative group">
       <video
         ref={vRef}
-        className={`${className ?? ''}`}
+        className={className ?? ''}
         poster={poster}
         playsInline
         muted
@@ -71,16 +70,16 @@ function AutoPlayVideo({
         type="button"
         aria-label={paused ? 'Play' : 'Pause'}
         onClick={togglePlay}
-        className="absolute inset-x-0 top-0"
+        className="absolute inset-x-0 top-0 hidden md:block"
         style={{
-          bottom: 56,
+          bottom: 64,
           background: 'transparent',
           cursor: 'pointer',
         }}
       />
 
       <div
-        className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-200 ${
+        className={`pointer-events-none absolute inset-0 hidden md:flex items-center justify-center transition-opacity duration-200 ${
           paused ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'
         }`}
       >
@@ -99,6 +98,7 @@ function AutoPlayVideo({
     </div>
   );
 }
+
 
 
 
