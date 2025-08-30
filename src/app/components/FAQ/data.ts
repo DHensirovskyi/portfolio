@@ -25,6 +25,6 @@ export const data = [
   },
   {
     value: 'We are interested. What are the next steps?',
-    description: "Excellent. The first step is a free, 30-minute strategy call where we can discuss your business and identify potential areas for automation and growth. Please get in touch via the contact section below, and let's schedule a conversation."
+    description: "No call needed. Send me a quick message and I’ll reply with a simple, tailored plan: what to automate first, expected impact, and a clear timeline."
   },
 ];
