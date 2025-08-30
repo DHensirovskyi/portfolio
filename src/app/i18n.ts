@@ -428,6 +428,12 @@ export const dict = {
         label: 'Projekte',
         arr: [
             {
+                slug: 'velvera',
+                img: "/work3.jpg",
+                name: 'Moderne Salon-Website mit KI-gestützter Terminvergabe und E-Mail-Automation.',
+                label: 'Website'
+            },
+            {
                 slug: 'gartenservice',
                 img: "/work1.jpg",
                 name: 'Gartenservice Augsburg — Unternehmenswebsite',
