@@ -78,8 +78,7 @@ export const dict = {
       },
       {
         value: "We are interested. What are the next steps?",
-        description:
-          "Excellent. The first step is a free, 30-minute strategy call where we can discuss your business and identify potential areas for automation and growth. Please get in touch via the contact section below, and let's schedule a conversation.",
+        description: "No call needed. Send me a quick message and I’ll reply with a simple, tailored plan: what to automate first, expected impact, and a clear timeline.",
       },
     ],
 
@@ -334,8 +333,7 @@ export const dict = {
     },
     {
         value: "Wir sind interessiert. Was sind die nächsten Schritte?",
-        description:
-        "Ausgezeichnet. Der erste Schritt ist ein kostenloses, 30-minütiges Strategiegespräch, in dem wir Ihr Unternehmen besprechen und potenzielle Bereiche für Automatisierung und Wachstum identifizieren. Bitte kontaktieren Sie mich über den unten stehenden Kontaktbereich, um einen Termin zu vereinbaren."
+        description: "Kein Telefonat nötig. Schreib mir kurz, und ich melde mich mit einem klaren, auf euch zugeschnittenen Plan: was wir zuerst automatisieren, welcher Effekt zu erwarten ist und in welchem Zeitrahmen."
     }
     ],
 
