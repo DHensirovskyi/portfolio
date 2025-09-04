@@ -78,7 +78,8 @@ export const dict = {
       },
       {
         value: "We are interested. What are the next steps?",
-        description: "No call needed. Send me a quick message and I’ll reply with a simple, tailored plan: what to automate first, expected impact, and a clear timeline.",
+        description:
+          "Excellent. The first step is a free, 30-minute strategy call where we can discuss your business and identify potential areas for automation and growth. Please get in touch via the contact section below, and let's schedule a conversation.",
       },
     ],
 
@@ -87,9 +88,9 @@ export const dict = {
       button: 'Discuss the project',
       plans: [
         {
-          name: "One-time development",
+          name: "Website development",
           description: "For businesses that need a modern, fast and reliable website to attract customers",
-          price: '€1500',
+          price: '€999',
           services: ['Development on Next.js (speed and SEO guarantee)', 'Adaptive design for all devices', 'Integration with CMS for independent content updating', 'Basic SEO optimization'],
           duration: '/project',
           recom: false,
@@ -97,7 +98,7 @@ export const dict = {
         {
           name: "Website + AI-Automation",
           description: "For companies that want not just an online presence, but a system that works for them 24/7, saves time and doesn't miss a single customer.",
-          price: '€2500',
+          price: '€1699',
           services: ['Setting up a system of instant response to requests', 'AI integration for analyzing and qualifying queries', 'Automatically send notifications in Telegram/WhatsApp'],
           duration: '/project',
           recom: true,
@@ -105,7 +106,7 @@ export const dict = {
         {
           name: "AI-Automation for your website",
           description: "For businesses that already have a good website, but you're losing time and customers due to manual processing of applications and long response times.",
-          price: '€1000',
+          price: '€699',
           services: ['Audit of your current business processes', 'Integration with your contact form', 'Configuring AI logic for analysis and response', 'Customize notifications for you and your team'],
           duration: '/project',
           recom: false,
@@ -333,7 +334,8 @@ export const dict = {
     },
     {
         value: "Wir sind interessiert. Was sind die nächsten Schritte?",
-        description: "Kein Telefonat nötig. Schreib mir kurz, und ich melde mich mit einem klaren, auf euch zugeschnittenen Plan: was wir zuerst automatisieren, welcher Effekt zu erwarten ist und in welchem Zeitrahmen."
+        description:
+        "Ausgezeichnet. Der erste Schritt ist ein kostenloses, 30-minütiges Strategiegespräch, in dem wir Ihr Unternehmen besprechen und potenzielle Bereiche für Automatisierung und Wachstum identifizieren. Bitte kontaktieren Sie mich über den unten stehenden Kontaktbereich, um einen Termin zu vereinbaren."
     }
     ],
 
@@ -342,9 +344,9 @@ export const dict = {
     button: 'Projekt besprechen',
     plans: [
     {
-        name: "Einmalige Entwicklung",
+        name: "Website Entwicklung",
         description: "Für Unternehmen, die eine moderne, schnelle und zuverlässige Website benötigen, um Kunden zu gewinnen.",
-        price: '€1500',
+        price: '€999',
         services: [
         'Entwicklung mit Next.js (Garantie für Geschwindigkeit und SEO)',
         'Responsives Design für alle Geräte',
@@ -357,7 +359,7 @@ export const dict = {
     {
         name: "Website + KI-Automatisierung",
         description: "Für Unternehmen, die nicht nur eine Online-Präsenz wollen, sondern ein System, das 24/7 für sie arbeitet, Zeit spart und keinen Kunden verpasst.",
-        price: '€2500',
+        price: '€1699',
         services: [
         'Einrichtung eines Systems für sofortige Reaktion auf Anfragen',
         'KI-Integration zur Analyse und Qualifizierung von Anfragen',
@@ -369,7 +371,7 @@ export const dict = {
     {
         name: "KI-Automatisierung für Ihre Website",
         description: "Für Unternehmen, die bereits eine gute Website haben, aber aufgrund manueller Antragsbearbeitung und langer Reaktionszeiten Zeit und Kunden verlieren.",
-        price: '€1000',
+        price: '€699',
         services: [
         'Audit Ihrer aktuellen Geschäftsprozesse',
         'Integration mit Ihrem Kontaktformular',
