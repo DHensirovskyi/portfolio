@@ -60,7 +60,7 @@ export default function Comments() {
               </div>
               <p className="text-white/50 text-[1rem]">{comment.description}</p>
               <div className="flex gap-4">
-                <Image src={"/commentPerson.svg"} alt={"person"} width={48} height={48}></Image>
+                <Image src={"/commentPerson.png"} alt={"person"} width={48} height={48}></Image>
                 <div>
                   <p>{comment.name}</p>
                   <p className="text-white/50">{comment.position}</p>
